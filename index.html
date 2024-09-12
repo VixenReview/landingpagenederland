@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wie gaat jouw pik beoordelen?</title>
+    <title>Wie mag uw pik beoordelen?</title>
     <style>
         * {
             box-sizing: border-box;
@@ -178,14 +178,14 @@
         <!-- Logo toegevoegd -->
         <img src="images/Asset%205.svg" alt="Bedrijfslogo" class="logo">
         
-        <h1>Chat met Onze Ervaren Makelaars</h1>
+        <h1>Wie mag uw pik beoordelen?</h1>
         
         <div class="makelaar-grid">
             <div class="makelaar-card">
                 <img src="images/blondemetlogo kopie.jpg" alt="Emma de Vries">
                 <div class="status-indicator status-online"></div>
                 <div class="makelaar-info">
-                    <h3>Emma de Vries</h3>
+                    <h3>Linda</h3>
                     <button class="btn" onclick="startChat('Emma de Vries')">Start gratis chat</button>
                 </div>
             </div>
@@ -193,7 +193,7 @@
                 <img src="images/brown.jpg" alt="Jeroen Bakker">
                 <div class="status-indicator status-offline"></div>
                 <div class="makelaar-info">
-                    <h3>Jeroen Bakker</h3>
+                    <h3>Emma</h3>
                 </div>
                 <div class="offline-overlay">Offline</div>
             </div>
@@ -201,7 +201,7 @@
                 <img src="images/brown2.jpg" alt="Sophie Jansen">
                 <div class="status-indicator status-offline"></div>
                 <div class="makelaar-info">
-                    <h3>Sophie Jansen</h3>
+                    <h3>Sophie</h3>
                 </div>
                 <div class="offline-overlay">Offline</div>
             </div>
@@ -209,17 +209,18 @@
                 <img src="images/slechte.jpg" alt="Mark van Dijk">
                 <div class="status-indicator status-offline"></div>
                 <div class="makelaar-info">
-                    <h3>Mark van Dijk</h3>
+                    <h3>Anna</h3>
                 </div>
                 <div class="offline-overlay">Offline</div>
             </div>
         </div>
     </div>
-
+    
     <script>
         function startChat(makelaarNaam) {
-            alert(`Chat wordt gestart met ${makelaarNaam}... (Implementatie van daadwerkelijke chat functionaliteit vereist)`);
+            window.location.href = 'https://www.google.com';
         }
     </script>
+
 </body>
 </html>
