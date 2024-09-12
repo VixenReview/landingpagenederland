@@ -44,8 +44,8 @@ h1 {
 
 .makelaar-card img {
     width: 100%;
-    height: 180px;
-    object-fit: cover;
+    height: 280px; /* Verhoog de hoogte om de afbeelding langwerpiger te maken */
+    object-fit: cover; /* Zorg ervoor dat de afbeelding goed wordt weergegeven binnen de nieuwe hoogte */
 }
 
 .makelaar-info {
@@ -137,7 +137,7 @@ h1 {
     }
 
     .makelaar-card img {
-        height: 200px;
+        height: 300px; /* Maak de afbeelding nog langwerpiger voor grotere schermen */
     }
 
     .makelaar-info {
