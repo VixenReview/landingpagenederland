@@ -23,10 +23,16 @@
             padding: 10px;
             max-width: 600px;
             margin: 0 auto;
+            text-align: center; /* Zorg ervoor dat de inhoud, inclusief het logo, gecentreerd is */
+        }
+
+        .logo {
+            max-width: 100%; /* Behoud de responsiviteit van het logo */
+            height: auto; /* Zorg ervoor dat de hoogte automatisch geschaald wordt */
+            margin-bottom: 20px; /* Geef wat ruimte onder het logo */
         }
 
         h1 {
-            text-align: center;
             color: #2c3e50;
             margin-bottom: 1rem;
             font-size: 1.5rem;
@@ -168,7 +174,11 @@
 </head>
 <body>
     <div class="container">
+        <!-- Logo toegevoegd -->
+        <img src="images/Asset%205.svg" alt="Bedrijfslogo" class="logo">
+        
         <h1>Chat met Onze Ervaren Makelaars</h1>
+        
         <div class="makelaar-grid">
             <div class="makelaar-card">
                 <img src="images/blondemetlogo kopie.jpg" alt="Emma de Vries">
