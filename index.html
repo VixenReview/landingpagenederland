@@ -217,8 +217,22 @@
     </div>
     
     <script>
-        function startChat(makelaarNaam) {
-            window.location.href = 'https://porni.bubbleapps.io/version-test/chat';
+        // Functie om de popup te openen en inhoud van popup.html te laden
+        function openPopup() {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'popup.html', true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById('popupContent').innerHTML = xhr.responseText;
+                    document.getElementById('popupOverlay').style.display = 'flex';
+                }
+            };
+            xhr.send();
+        }
+    
+        // Functie om de popup te sluiten
+        function closePopup() {
+            document.getElementById('popupOverlay').style.display = 'none';
         }
     </script>
 
