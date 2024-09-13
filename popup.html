@@ -79,8 +79,8 @@
                     <input type="radio" name="question1" value="vernederend" required>
                     Vernederend
                 </label>
-                
             </div>
+
             <!-- Vraag 2 -->
             <div class="question">
                 <label><strong>2. Waar wil je dat ik extra aandacht aan besteed?</strong></label>
@@ -97,6 +97,7 @@
                     Fotokwaliteit
                 </label>
             </div>
+
             <!-- Verzenden -->
             <button type="button" class="submit-btn" onclick="submitForm()">Laat voorbeeld URL zien</button>
         </form>
@@ -112,10 +113,10 @@
             const vraag2 = document.querySelector('input[name="question2"]:checked').value;
 
             // Creëer de URL met de parameters
-            const url = start-chat.html?vraag1=${vraag1}&vraag2=${vraag2};
+            const url = `start-chat.html?vraag1=${vraag1}&vraag2=${vraag2}`;
 
             // Toon de gegenereerde URL op de pagina
-            document.getElementById('output').textContent = Voorbeeld URL: ${url};
+            document.getElementById('output').textContent = `Voorbeeld URL: ${url}`;
         }
     </script>
 </body>
