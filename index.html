@@ -23,15 +23,14 @@
             padding: 10px;
             max-width: 600px;
             margin: 0 auto;
-            text-align: center; /* Zorg ervoor dat de inhoud, inclusief het logo, gecentreerd is */
+            text-align: center;
         }
 
         .logo {
-            width: 100px; /* 1/4 van 917px */
-            height: auto; /* Zorg ervoor dat de hoogte automatisch geschaald wordt */
-            margin-bottom: 20px; /* Geef wat ruimte onder het logo */
+            width: 100px;
+            height: auto;
+            margin-bottom: 20px;
         }
-
 
         h1 {
             color: #000000;
@@ -136,6 +135,37 @@
             font-size: 0.8rem;
         }
 
+        /* Popup styling */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .popup-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .close-btn {
+            background: red;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            float: right;
+        }
+
         @media (min-width: 480px) {
             .container {
                 padding: 20px;
@@ -182,40 +212,23 @@
         
         <div class="makelaar-grid">
             <div class="makelaar-card">
-                <img src="images/blondemetlogo kopie.jpg" alt="Emma de Vries">
+                <img src="images/blondemetlogo kopie.jpg" alt="Linda">
                 <div class="status-indicator status-online"></div>
                 <div class="makelaar-info">
                     <h3>Linda</h3>
-                    <button class="btn" onclick="startChat('Emma de Vries')">Start meteen gratis chat</button>
+                    <button class="btn" onclick="openPopup()">Start meteen gratis chat</button>
                 </div>
-            </div>
-            <div class="makelaar-card">
-                <img src="images/brown.jpg" alt="Jeroen Bakker">
-                <div class="status-indicator status-offline"></div>
-                <div class="makelaar-info">
-                    <h3>Emma</h3>
-                </div>
-                <div class="offline-overlay">Offline</div>
-            </div>
-            <div class="makelaar-card">
-                <img src="images/brown2.jpg" alt="Sophie Jansen">
-                <div class="status-indicator status-offline"></div>
-                <div class="makelaar-info">
-                    <h3>Sophie</h3>
-                </div>
-                <div class="offline-overlay">Offline</div>
-            </div>
-            <div class="makelaar-card">
-                <img src="images/slechte.jpg" alt="Mark van Dijk">
-                <div class="status-indicator status-offline"></div>
-                <div class="makelaar-info">
-                    <h3>Anna</h3>
-                </div>
-                <div class="offline-overlay">Offline</div>
             </div>
         </div>
     </div>
-    
+
+    <!-- Popup Overlay -->
+    <div id="popupOverlay" class="popup-overlay">
+        <div id="popupContent" class="popup-content">
+            <!-- Inhoud van popup.html wordt hier geladen -->
+        </div>
+    </div>
+
     <script>
         // Functie om de popup te openen en inhoud van popup.html te laden
         function openPopup() {
@@ -229,7 +242,7 @@
             };
             xhr.send();
         }
-    
+
         // Functie om de popup te sluiten
         function closePopup() {
             document.getElementById('popupOverlay').style.display = 'none';
