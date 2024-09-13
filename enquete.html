@@ -57,30 +57,31 @@
         <form id="surveyForm">
             <!-- Vraag 1 -->
             <div class="question">
-                <label><strong>1. Hoe wil je dat ik je beoordeel?</strong></label>
+                <label><strong>1. Hoe wil je dat ik je pik beoordeel?</strong></label>
                 <label>
                     <input type="radio" name="question1" value="eerlijk" required>
-                    Eerlijke beoordeling
+                    Eerlijk
                 </label>
+                   <label>
+                    <input type="radio" name="question1" value="aanbiddend" required>
+                    Aanbiddend
+                </label>             
                 <label>
                     <input type="radio" name="question1" value="vernederend" required>
-                    Vernederende beoordeling
+                    Vernederend
                 </label>
-                <label>
-                    <input type="radio" name="question1" value="aanbiddend" required>
-                    Goddelijke verheerlijking
-                </label>
+
             </div>
             <!-- Vraag 2 -->
             <div class="question">
                 <label><strong>2. Waar wil je dat ik extra aandacht aan besteed?</strong></label>
                 <label>
                     <input type="radio" name="question2" value="G" required>
-                    Grootte
+                    Lengte en dikte
                 </label>
                 <label>
                     <input type="radio" name="question2" value="V" required>
-                    Vorm
+                    Vorm en aderen
                 </label>
                 <label>
                     <input type="radio" name="question2" value="F" required>
@@ -88,7 +89,7 @@
                 </label>
             </div>
             <!-- Verzenden -->
-            <button type="button" class="submit-btn" onclick="submitForm()">Verstuur en start chat</button>
+            <button type="button" class="submit-btn" onclick="submitForm()">Start chat meteen</button>
         </form>
     </div>
 
