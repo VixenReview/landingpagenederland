@@ -10,16 +10,16 @@
             line-height: 1.4;
             background-color: #f8f9fa;
             color: #333;
-            margin: 0; /* Verwijder standaardmarges */
+            margin: 0;
             padding: 0;
-            overflow-x: hidden; /* Voorkom horizontale scrollbalken op mobiel */
+            overflow-x: hidden;
         }
         
         /* Logo bovenaan */
         .top-logo {
             display: flex;
-            justify-content: center; /* Centreer het logo horizontaal */
-            margin-top: 10px; /* 10 pixels van de bovenkant van de pagina */
+            justify-content: center;
+            margin-top: 10px;
         }
         
         .logo {
@@ -45,16 +45,16 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 10px; /* Ruimte tussen de foto's */
+            gap: 10px;
             margin-bottom: 20px;
-            flex-wrap: nowrap; /* Zorgt ervoor dat foto's naast elkaar blijven */
+            flex-wrap: nowrap;
         }
 
         .profile-photo {
-            width: calc(50% - 10px); /* Twee foto's naast elkaar met ruimte tussen */
-            max-width: 150px; /* Max breedte van elke foto */
+            width: calc(50% - 10px);
+            max-width: 150px;
             height: auto;
-            border-radius: 5%; /* Aanpassen indien je een rondere foto wilt */
+            border-radius: 5%;
         }
             
         /* Labels en formulier-elementen */
@@ -70,7 +70,8 @@
             color: #333;
         }
 
-        .question input[type="radio"] {
+        .question input[type="radio"],
+        .question input[type="file"] {
             margin-right: 10px;
         }
 
@@ -108,15 +109,6 @@
         }
         
         /* Responsiviteit */
-        /* Verwijder de media query zodat foto's altijd naast elkaar blijven */
-        /*
-        @media (max-width: 480px) {
-            .profile-photos {
-                flex-direction: column;
-            }
-        }
-        */
-
         @media (min-width: 480px) {
             .container {
                 padding: 20px;
@@ -147,7 +139,7 @@
         </div>
 
         <!-- Enquêteformulier -->
-        <form id="surveyForm">
+        <form id="surveyForm" enctype="multipart/form-data">
             <!-- Vraag 1 -->
             <div class="question">
                 <label><strong>1. Hoe wil je dat ik je beoordeel?</strong></label>
@@ -164,6 +156,7 @@
                     Vernederend
                 </label>
             </div>
+
             <!-- Vraag 2 -->
             <div class="question">
                 <label><strong>2. Waar wil je dat ik extra aandacht aan besteed?</strong></label>
@@ -180,8 +173,15 @@
                     Fotokwaliteit
                 </label>
             </div>
+
+            <!-- Vraag 3: Upload je foto -->
+            <div class="question">
+                <label><strong>3. Upload je foto (camera of galerij)</strong></label>
+                <input type="file" id="fileInput" name="photo" accept="image/*" capture="environment" required>
+            </div>
+
             <!-- Verzenden -->
-            <button type="button" class="submit-btn" onclick="submitForm()">Start chat meteen</button>
+            <button type="button" class="submit-btn" onclick="submitForm()">Ik ben benieuwd, stuur me je pik!</button>
         </form>
     </div>
 
@@ -190,11 +190,18 @@
             // Haal de geselecteerde waarde van vraag 1 en vraag 2 op
             const vraag1 = document.querySelector('input[name="question1"]:checked').value;
             const vraag2 = document.querySelector('input[name="question2"]:checked').value;
+            const fileInput = document.getElementById('fileInput');
+
+            // Check of er een bestand is geselecteerd
+            if (fileInput.files.length === 0) {
+                alert("Je moet een foto uploaden!");
+                return;
+            }
 
             // Creëer de URL met de parameters
             const url = `https://porni.bubbleapps.io/version-test?vraag1=${vraag1}&vraag2=${vraag2}`;
 
-            // Redirect naar de nieuwe URL met de parameters
+            // Redirect naar de nieuwe URL met de parameters (foto moet met een backend worden afgehandeld)
             window.location.href = url;
         }
     </script>
