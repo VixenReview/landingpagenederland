@@ -5,123 +5,130 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Persoonlijke Beoordeling</title>
     <style>
-    body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        line-height: 1.4;
-        background-color: #f8f9fa; /* Overgenomen uit de tweede CSS */
-        color: #333;
-    }
-    
-    /* Container */
-    .container {
-        width: 100%; /* Aangepast voor consistentie */
-        padding: 10px; /* Overgenomen uit de tweede CSS */
-        max-width: 600px; /* Overgenomen uit de tweede CSS */
-        margin: 50px auto;
-        background-color: white;
-        border-radius: 8px; /* Aangepast om te matchen met .makelaar-card */
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Aangepast om te matchen met .makelaar-card */
-        text-align: center; /* Toegevoegd voor consistentie */
-    }
-
-    .logo {
-        width: 100px; /* 1/4 van 917px */
-        height: auto; /* Zorg ervoor dat de hoogte automatisch geschaald wordt */
-        margin-bottom: 20px; /* Geef wat ruimte onder het logo */
-    }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.4;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0; /* Verwijder standaardmarges */
+            padding: 0;
+        }
         
-    /* Koppen */
-    h1 {
-        color: #000000; /* Overgenomen uit de tweede CSS */
-        margin-bottom: 1.5rem; /* Overgenomen uit de tweede CSS */
-        font-size: 1.8rem; /* Overgenomen uit de tweede CSS */
-    }
-    
-    /* Labels en formulier-elementen */
-    label {
-        display: block;
-        font-size: 1rem; /* Aangepast voor consistentie */
-        margin: 10px 0;
-        color: #333;
-        text-align: left; /* Toegevoegd voor betere leesbaarheid */
-    }
-    
-    input[type="radio"] {
-        margin-right: 10px;
-    }
-    
-    /* Submit-knop */
-    .submit-btn {
-        display: block;
-        width: 100%;
-        padding: 0.6rem; /* Overgenomen uit .btn */
-        background: #3498db; /* Overgenomen uit .btn */
-        color: white;
-        text-align: center;
-        text-decoration: none;
-        border-radius: 4px; /* Overgenomen uit .btn */
-        font-size: 0.9rem; /* Overgenomen uit .btn */
-        transition: background-color 0.3s ease;
-        -webkit-tap-highlight-color: transparent;
-        border: none;
-        cursor: pointer;
-        margin-top: 20px;
-    }
-    
-    .submit-btn:hover, .submit-btn:active {
-        background: #2980b9; /* Overgenomen uit .btn:hover */
-    }
-    
-    /* Output-div */
-    .output {
-        margin-top: 20px;
-        padding: 10px;
-        background-color: #f0f0f0;
-        border-radius: 5px;
-        font-size: 0.9rem; /* Aangepast voor consistentie */
-        color: #333;
-        word-wrap: break-word;
-    }
-    
-    /* Responsiviteit */
-    @media (min-width: 480px) {
+        /* Logo bovenaan */
+        .top-logo {
+            display: flex;
+            justify-content: center; /* Centreer het logo horizontaal */
+            margin-top: 10px; /* 10 pixels van de bovenkant van de pagina */
+        }
+        
+        .logo {
+            width: 100px;
+            height: auto;
+        }
+        
+        /* Container */
         .container {
-            padding: 20px;
+            width: 100%;
+            padding: 10px;
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
         }
-    
-        h1 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
+        
+        /* Profielfoto */
+        .profile-photo {
+            width: 150px;
+            height: auto;
+            border-radius: 50%; /* Maak de afbeelding rond */
+            margin-bottom: 20px;
         }
-    
+            
+        /* Labels en formulier-elementen */
         label {
+            display: block;
             font-size: 1rem;
+            margin: 10px 0;
+            color: #333;
+            text-align: left;
         }
-    
+        
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        
+        /* Submit-knop */
         .submit-btn {
-            font-size: 0.9rem;
+            display: block;
+            width: 100%;
             padding: 0.6rem;
+            background: #3498db;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+            -webkit-tap-highlight-color: transparent;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
         }
-    }
+        
+        .submit-btn:hover, .submit-btn:active {
+            background: #2980b9;
+        }
+        
+        /* Output-div */
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            color: #333;
+            word-wrap: break-word;
+        }
+        
+        /* Responsiviteit */
+        @media (min-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+        
+            label {
+                font-size: 1rem;
+            }
+        
+            .submit-btn {
+                font-size: 0.9rem;
+                padding: 0.6rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Logo toegevoegd -->
+    <!-- Bedrijfslogo bovenaan de pagina -->
+    <div class="top-logo">
         <img src="images/Asset%205.svg" alt="Bedrijfslogo" class="logo">
-        
-        <h1>Beoordeling door Linda</h1>
+    </div>
+
+    <div class="container">
+        <!-- Profielfoto van Linda -->
+        <img src="images/images/Blondetshirt.jpg" alt="Profielfoto van Linda" class="profile-photo">
 
         <!-- Enquêteformulier -->
         <form id="surveyForm">
             <!-- Vraag 1 -->
             <div class="question">
-                <label><strong>1. Hoe wil je dat ik je pik beoordeel?</strong></label>
+                <label><strong>1. Hoe wil je dat ik je beoordeel?</strong></label>
                 <label>
                     <input type="radio" name="question1" value="eerlijk" required>
                     Eerlijk
                 </label>
-                   <label>
+                <label>
                     <input type="radio" name="question1" value="aanbiddend" required>
                     Aanbiddend
                 </label>             
@@ -129,13 +136,12 @@
                     <input type="radio" name="question1" value="vernederend" required>
                     Vernederend
                 </label>
-
             </div>
             <!-- Vraag 2 -->
             <div class="question">
                 <label><strong>2. Waar wil je dat ik extra aandacht aan besteed?</strong></label>
                 <label>
-                    <input type="radio" name="question2" value="G" required>
+                    <input type="radio" name="question2" value="L" required>
                     Lengte en dikte
                 </label>
                 <label>
