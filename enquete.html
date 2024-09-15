@@ -12,6 +12,7 @@
             color: #333;
             margin: 0; /* Verwijder standaardmarges */
             padding: 0;
+            overflow-x: hidden; /* Voorkom horizontale scrollbalken op mobiel */
         }
         
         /* Logo bovenaan */
@@ -24,14 +25,15 @@
         .logo {
             width: 100px;
             height: auto;
+            max-width: 100%;
         }
         
         /* Container */
         .container {
-            width: 100%;
+            width: 90%;
             padding: 10px;
             max-width: 600px;
-            margin: 50px auto;
+            margin: 20px auto;
             background-color: white;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -41,24 +43,29 @@
         /* Profielfoto */
         .profile-photo {
             width: 150px;
+            max-width: 100%;
             height: auto;
-            border-radius: 50%; /* Maak de afbeelding rond */
+            border-radius: 5%; /* Aanpassen indien je een rondere foto wilt */
             margin-bottom: 20px;
         }
             
         /* Labels en formulier-elementen */
-        label {
+        .question {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .question label {
             display: block;
             font-size: 1rem;
             margin: 10px 0;
             color: #333;
-            text-align: left;
         }
-        
-        input[type="radio"] {
+
+        .question input[type="radio"] {
             margin-right: 10px;
         }
-        
+
         /* Submit-knop */
         .submit-btn {
             display: block;
@@ -117,7 +124,7 @@
 
     <div class="container">
         <!-- Profielfoto van Linda -->
-        <img src="images/Blondetshirt.jpg" alt="Profielfoto van Linda" class="profile-photo">
+        <img src="images/blondemetlogo kopie.jpg" alt="Profielfoto van Linda" class="profile-photo">
 
         <!-- Enquêteformulier -->
         <form id="surveyForm">
