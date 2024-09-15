@@ -47,11 +47,12 @@
             align-items: center;
             gap: 10px; /* Ruimte tussen de foto's */
             margin-bottom: 20px;
+            flex-wrap: nowrap; /* Zorgt ervoor dat foto's naast elkaar blijven */
         }
 
         .profile-photo {
-            width: 150px;
-            max-width: 100%;
+            width: calc(50% - 10px); /* Twee foto's naast elkaar met ruimte tussen */
+            max-width: 150px; /* Max breedte van elke foto */
             height: auto;
             border-radius: 5%; /* Aanpassen indien je een rondere foto wilt */
         }
@@ -107,11 +108,14 @@
         }
         
         /* Responsiviteit */
+        /* Verwijder de media query zodat foto's altijd naast elkaar blijven */
+        /*
         @media (max-width: 480px) {
             .profile-photos {
                 flex-direction: column;
             }
         }
+        */
 
         @media (min-width: 480px) {
             .container {
