@@ -40,13 +40,20 @@
             text-align: center;
         }
         
-        /* Profielfoto */
+        /* Profielfoto's */
+        .profile-photos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px; /* Ruimte tussen de foto's */
+            margin-bottom: 20px;
+        }
+
         .profile-photo {
             width: 150px;
             max-width: 100%;
             height: auto;
             border-radius: 5%; /* Aanpassen indien je een rondere foto wilt */
-            margin-bottom: 20px;
         }
             
         /* Labels en formulier-elementen */
@@ -100,6 +107,12 @@
         }
         
         /* Responsiviteit */
+        @media (max-width: 480px) {
+            .profile-photos {
+                flex-direction: column;
+            }
+        }
+
         @media (min-width: 480px) {
             .container {
                 padding: 20px;
@@ -123,8 +136,11 @@
     </div>
 
     <div class="container">
-        <!-- Profielfoto van Linda -->
-        <img src="images/blondemetlogo kopie.jpg" alt="Profielfoto van Linda" class="profile-photo">
+        <!-- Profielfoto's -->
+        <div class="profile-photos">
+            <img src="images/blondemetlogo kopie.jpg" alt="Profielfoto van Linda" class="profile-photo">
+            <img src="images/Blondetshirt.jpg" alt="Tweede profielfoto" class="profile-photo">
+        </div>
 
         <!-- Enquêteformulier -->
         <form id="surveyForm">
