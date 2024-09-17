@@ -7,16 +7,16 @@
     
     <!-- TrafficJunky Infinity Tag -->
     <script type="text/javascript" src="https://hw-cdn2.adtng.com/delivery/idsync/idsync.min.js" defer></script>
-    <script>
+    <script defer>
         window.idsync.config(35381)
             .fp_get()
             .sync();
             
         // Acquisition event voor de tweede pagina
         window.idsync.send_event({
-            "name": "2ePaginaweergave",
-            "type": "Acquisition",
-            "value": "0.001"
+            name: "2ePaginaweergave",
+            type: "Acquisition",
+            value: "0.001"
         });
     </script>
     
@@ -224,7 +224,7 @@
             // Verwijs naar de nieuwe URL (voeg een kleine vertraging toe om te zorgen dat het event wordt verstuurd)
             setTimeout(function() {
                 window.location.href = url;
-            }, 100);  // 100ms vertraging om het event te laten versturen
+            }, 300);  // 100ms vertraging om het event te laten versturen
         }
     </script>
 
