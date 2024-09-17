@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Persoonlijke Beoordeling</title>
     
+    <!-- Toegevoegde meta tag voor TrafficJunky -->
+    <meta http-equiv="Delegate-CH" content="sec-ch-ua https://ads.trafficjunky.net; sec-ch-ua-arch https://ads.trafficjunky.net; sec-ch-ua-full-version-list https://ads.trafficjunky.net; sec-ch-ua-mobile https://ads.trafficjunky.net; sec-ch-ua-model https://ads.trafficjunky.net; sec-ch-ua-platform https://ads.trafficjunky.net; sec-ch-ua-platform-version https://ads.trafficjunky.net;">
+
     <!-- TrafficJunky Infinity Tag -->
     <script type="text/javascript" src="https://hw-cdn2.adtng.com/delivery/idsync/idsync.min.js" defer></script>
     <script defer>
@@ -195,13 +198,27 @@
         </form>
     </div>
 
+    <!-- Toegevoegde img tag voor TrafficJunky met willekeurig nummer -->
+    <script>
+        (function() {
+            var randomNumber = Math.floor(Math.random() * 1000000000);
+            var img = document.createElement('img');
+            img.id = "1000494271_cpa_testing";
+            img.src = "https://ads.trafficjunky.net/ct?a=1000494271&member_id=1006596821&cb=" + randomNumber + "&cti=&ctv=0&ctd=";
+            img.width = 1;
+            img.height = 1;
+            img.border = 0;
+            document.body.appendChild(img);
+        })();
+    </script>
+
     <script>
         function submitForm() {
             // Verstuur het TrafficJunky interaction event
             window.idsync.send_event({
-                "name": "2ecta_button_click",
-                "type": "Interaction",
-                "value": "0.001"
+                name: "2ecta_button_click",
+                type: "Interaction",
+                value: "0.001"
             });
     
             // Haal de geselecteerde waarden van vraag 1 en vraag 2 op
@@ -224,7 +241,7 @@
             // Verwijs naar de nieuwe URL (voeg een kleine vertraging toe om te zorgen dat het event wordt verstuurd)
             setTimeout(function() {
                 window.location.href = url;
-            }, 300);  // 100ms vertraging om het event te laten versturen
+            }, 300);  // 300ms vertraging om het event te laten versturen
         }
     </script>
 
