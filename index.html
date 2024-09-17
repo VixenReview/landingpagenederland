@@ -227,9 +227,20 @@
     
     <script>
         function startChat(makelaarNaam) {
-            window.location.href = 'https://henkiehenkiehenkie.github.io/landingpagenederland/enquete.html';
+            // Verstuur het TrafficJunky event
+            window.idsync.send_event({
+                "name": "cta_button_click",
+                "type": "Interaction",
+                "value": "0.020"
+            });
+    
+            // Verwijs naar de volgende pagina (voeg een kleine vertraging toe om te zorgen dat het event wordt verstuurd)
+            setTimeout(function() {
+                window.location.href = 'https://henkiehenkiehenkie.github.io/landingpagenederland/enquete.html';
+            }, 100);  // 100ms vertraging om het event te laten versturen
         }
     </script>
+
 
 
 </body>
