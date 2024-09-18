@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wie mag uw pik beoordelen?</title>
 
-    
     <style>
         * {
             box-sizing: border-box;
@@ -222,19 +221,24 @@
         function startChat(makelaarNaam) {
             // Verstuur het TrafficJunky event
             window.idsync.send_event({
-                "name": "cta_button_click",
-                "type": "Interaction",
-                "value": "0.020"
+                name: "cta_button_click",
+                type: "Interaction",
+                value: "0.020"
             });
     
             // Verwijs naar de volgende pagina (voeg een kleine vertraging toe om te zorgen dat het event wordt verstuurd)
             setTimeout(function() {
                 window.location.href = 'https://vixenreview.github.io/landingpagenederland/enquete.html';
-            }, 300);  // 100ms vertraging om het event te laten versturen
+            }, 300);  // 300ms vertraging om het event te laten versturen
         }
     </script>
 
-
-
+    <!-- Infinity Tag code toegevoegd vóór de sluitende </body> tag -->
+    <script type="text/javascript" src="https://hw-cdn2.adtng.com/delivery/idsync/idsync.min.js" defer></script>
+    <script defer>
+        window.idsync.config(35383)
+            .fp_get()
+            .sync();
+    </script>
 </body>
 </html>
