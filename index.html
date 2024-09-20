@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wie mag uw pik beoordelen?</title>
+    <title>wie mag uw beoordelen?</title>
 
     <style>
         * {
@@ -24,20 +24,37 @@
             padding: 10px;
             max-width: 600px;
             margin: 0 auto;
-            text-align: center; /* Zorg ervoor dat de inhoud, inclusief het logo, gecentreerd is */
+            text-align: center;
         }
 
         .logo {
-            width: 100px; /* 1/4 van 917px */
-            height: auto; /* Zorg ervoor dat de hoogte automatisch geschaald wordt */
-            margin-bottom: 20px; /* Geef wat ruimte onder het logo */
+            width: 100px;
+            height: auto;
+            margin-bottom: 20px;
         }
-
 
         h1 {
             color: #000000;
             margin-bottom: 1rem;
             font-size: 1.5rem;
+        }
+
+        /* Nieuwe stijl voor de bullets */
+        .bullets {
+            list-style-type: none;
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .bullets li {
+            margin: 0.5rem;
+            padding: 0.5rem 1rem;
+            background-color: #e74c3c;
+            color: white;
+            border-radius: 20px;
+            font-size: 0.9rem;
         }
 
         .makelaar-grid {
@@ -147,6 +164,10 @@
                 margin-bottom: 1.5rem;
             }
 
+            .bullets li {
+                font-size: 1rem;
+            }
+
             .makelaar-grid {
                 gap: 15px;
             }
@@ -176,10 +197,16 @@
 </head>
 <body>
     <div class="container">
-        <!-- Logo toegevoegd -->
         <img src="images/Asset%205.svg" alt="Bedrijfslogo" class="logo">
         
-        <h1>Wie mag uw pik beoordelen?</h1>
+        <h1>Wie mag uw beoordelen?</h1>
+        
+        <!-- Nieuwe bullets toegevoegd -->
+        <ul class="bullets">
+            <li>Veilig&Anoniem</li>
+            <li>Binnen één minuut</li>
+            <li>Live chat</li>
+        </ul>
         
         <div class="makelaar-grid">
             <div class="makelaar-card">
@@ -187,7 +214,7 @@
                 <div class="status-indicator status-online"></div>
                 <div class="makelaar-info">
                     <h3>Linda</h3>
-                    <button class="btn" onclick="startChat('Emma de Vries')">Start meteen gratis chat</button>
+                    <button class="btn" onclick="startChat('Emma de Vries')">Ga door</button>
                 </div>
             </div>
             <div class="makelaar-card">
@@ -219,21 +246,18 @@
     
     <script>
         function startChat(makelaarNaam) {
-            // Verstuur het TrafficJunky event
             window.idsync.send_event({
                 name: "cta_button_click",
                 type: "Interaction",
                 value: "0.020"
             });
     
-            // Verwijs naar de volgende pagina (voeg een kleine vertraging toe om te zorgen dat het event wordt verstuurd)
             setTimeout(function() {
                 window.location.href = 'https://vixenreview.github.io/landingpagenederland/enquete.html';
-            }, 300);  // 300ms vertraging om het event te laten versturen
+            }, 300);
         }
     </script>
 
-    <!-- Infinity Tag code toegevoegd vóór de sluitende </body> tag -->
     <script type="text/javascript" src="https://hw-cdn2.adtng.com/delivery/idsync/idsync.min.js" defer></script>
     <script defer>
         window.idsync.config(35383)
