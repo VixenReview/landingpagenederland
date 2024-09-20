@@ -124,6 +124,23 @@
                 padding: 0.6rem;
             }
         }
+        
+        /* Stijl voor de nieuwe checkbox */
+        .age-verification {
+            margin-top: 20px;
+            text-align: left;
+        }
+        
+        .age-verification label {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #333;
+        }
+        
+        .age-verification input[type="checkbox"] {
+            margin-right: 10px;
+        }
     </style>
 </head>
 <body>
@@ -178,6 +195,13 @@
                 <label><strong>3. Hoe wil je genoemd worden?</strong></label>
                 <input type="text" name="question3" id="question3" placeholder="Bijvoorbeeld je naam of bijnaam" required>
             </div>
+            <!-- Nieuwe leeftijdsverificatie checkbox -->
+            <div class="age-verification">
+                <label>
+                    <input type="checkbox" name="ageVerification" id="ageVerification" required>
+                    Ik verklaar dat ik 18 jaar of ouder ben
+                </label>
+            </div>
             <!-- Verzenden -->
             <button type="button" class="submit-btn" onclick="submitForm()">Start chat meteen</button>
         </form>
@@ -203,10 +227,17 @@
             const vraag1 = document.querySelector('input[name="question1"]:checked').value;
             const vraag2 = document.querySelector('input[name="question2"]:checked').value;
             const vraag3 = document.getElementById('question3').value.trim();
+            const ageVerified = document.getElementById('ageVerification').checked;
     
             // Controleer of vraag 3 is ingevuld
             if (vraag3 === "") {
                 alert("Vul alstublieft in hoe je genoemd wilt worden.");
+                return;
+            }
+    
+            // Controleer of de leeftijdsverificatie is aangevinkt
+            if (!ageVerified) {
+                alert("Je moet bevestigen dat je 18 jaar of ouder bent om door te gaan.");
                 return;
             }
     
