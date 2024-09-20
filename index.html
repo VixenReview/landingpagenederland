@@ -43,13 +43,21 @@
         .bullets {
             list-style-type: none;
             margin-bottom: 1.5rem;
-            text-align: center;
-            padding: 0;
+            text-align: left;
+            padding-left: 20px;
         }
 
         .bullets li {
             margin-bottom: 0.5rem;
             font-size: 0.9rem;
+        }
+
+        .bullets li:before {
+            content: "•";
+            color: #3498db;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
         }
 
         .makelaar-grid {
@@ -196,7 +204,7 @@
         
         <h1>Wie mag uw beoordelen?</h1>
         
-        <!-- Gecentreerde bullets -->
+        <!-- Aangepaste bullets -->
         <ul class="bullets">
             <li>Veilig&Anoniem</li>
             <li>Binnen één minuut</li>
