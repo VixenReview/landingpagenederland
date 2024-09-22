@@ -1,203 +1,3 @@
-<!DOCTYPE html>
-<html lang="nl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>wie mag uw pik beoordelen?</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.4;
-            background-color: #f8f9fa;
-            color: #333;
-        }
-
-        .container {
-            width: 100%;
-            padding: 10px;
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .logo {
-            width: 100px;
-            height: auto;
-            margin-bottom: 20px;
-        }
-
-        h1 {
-            color: #000000;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        /* Aangepaste stijl voor de bullets */
-        .bullets {
-            list-style-type: none;
-            margin-bottom: 1.5rem;
-            text-align: center;
-            padding-left: 20px;
-        }
-
-        .bullets li {
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
-        }
-
-        .bullets li:before {
-            content: "•";
-            color: #3498db;
-            display: inline-block;
-            width: 1em;
-            margin-left: -1em;
-        }
-
-        .makelaar-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            margin-bottom: 1rem;
-        }
-
-        .makelaar-card {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            overflow: hidden;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .makelaar-card img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-        }
-
-        .makelaar-info {
-            padding: 0.5rem;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .makelaar-info h3 {
-            margin-bottom: 0.25rem;
-            color: #2c3e50;
-            font-size: 0.9rem;
-        }
-
-        .makelaar-info p {
-            color: #7f8c8d;
-            font-size: 0.8rem;
-            margin-bottom: 0.5rem;
-            flex-grow: 1;
-        }
-
-        .status-indicator {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            border: 2px solid white;
-        }
-
-        .status-online {
-            background-color: #2ecc71;
-        }
-
-        .status-offline {
-            background-color: #e74c3c;
-        }
-
-        .btn {
-            display: block;
-            width: 100%;
-            padding: 0.5rem;
-            background: #3498db;
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            transition: background-color 0.3s ease;
-            -webkit-tap-highlight-color: transparent;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn:hover, .btn:active {
-            background: #2980b9;
-        }
-
-        .offline-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-        }
-
-        @media (min-width: 480px) {
-            .container {
-                padding: 20px;
-            }
-
-            h1 {
-                font-size: 1.8rem;
-                margin-bottom: 1.5rem;
-            }
-
-            .bullets li {
-                font-size: 1rem;
-            }
-
-            .makelaar-grid {
-                gap: 15px;
-            }
-
-            .makelaar-card img {
-                height: 300px;
-            }
-
-            .makelaar-info {
-                padding: 0.75rem;
-            }
-
-            .makelaar-info h3 {
-                font-size: 1rem;
-            }
-
-            .makelaar-info p {
-                font-size: 0.9rem;
-            }
-
-            .btn {
-                font-size: 0.9rem;
-                padding: 0.6rem;
-            }
-        }
-    </style>
-</head>
 <body>
     <div class="container">
         <img src="images/Asset%205.svg" alt="Bedrijfslogo" class="logo">
@@ -212,14 +12,18 @@
         </ul>
         
         <div class="makelaar-grid">
-            <div class="makelaar-card">
-                <img src="images/blondemetlogo kopie.jpg" alt="Emma de Vries">
-                <div class="status-indicator status-online"></div>
-                <div class="makelaar-info">
-                    <h3>Linda</h3>
-                    <button class="btn" onclick="startChat('Emma de Vries')">Kies Linda</button>
+            <!-- Klikbare kaart voor Linda -->
+            <a href="https://vixenreview.github.io/landingpagenederland/enquete.html" class="makelaar-card-link">
+                <div class="makelaar-card">
+                    <img src="images/blondemetlogo kopie.jpg" alt="Emma de Vries">
+                    <div class="status-indicator status-online"></div>
+                    <div class="makelaar-info">
+                        <h3>Linda</h3>
+                        <div class="btn btn-disabled">Kies Linda</div> <!-- Button puur visueel -->
+                    </div>
                 </div>
-            </div>
+            </a>
+            <!-- Andere kaarten -->
             <div class="makelaar-card">
                 <img src="images/brown.jpg" alt="Jeroen Bakker">
                 <div class="status-indicator status-offline"></div>
@@ -268,4 +72,3 @@
             .sync();
     </script>
 </body>
-</html>
